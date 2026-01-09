@@ -2,45 +2,27 @@ export function Sidebar() {
   return (
     <aside
       style={{
-        position: "fixed",
-        top: "64px", // altura do header
-        left: 0,
-        width: "240px",
+        width: "220px",
+        backgroundColor: "#f4f6f8",
         height: "calc(100vh - 64px)",
-        backgroundColor: "#0f172a",
-        color: "#e5e7eb",
-        padding: "24px 16px",
+        padding: "16px",
         boxSizing: "border-box",
+        borderRight: "1px solid #ddd",
       }}
     >
-      <nav style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-        <SidebarItem label="Dashboard" />
-        <SidebarItem label="Documentos" />
-        <SidebarItem label="Usuários" />
-        <SidebarItem label="Relatórios" />
-        <SidebarItem label="Configurações" />
-      </nav>
-    </aside>
-  );
-}
+      <p style={{ fontWeight: 600, marginBottom: "12px" }}>
+        Menu
+      </p>
 
-function SidebarItem({ label }: { label: string }) {
-  return (
-    <div
-      style={{
-        padding: "10px 12px",
-        borderRadius: "6px",
-        cursor: "pointer",
-        backgroundColor: "transparent",
-      }}
-      onMouseEnter={(e) =>
-        (e.currentTarget.style.backgroundColor = "#1e293b")
-      }
-      onMouseLeave={(e) =>
-        (e.currentTarget.style.backgroundColor = "transparent")
-      }
-    >
-      {label}
-    </div>
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        <li style={{ marginBottom: "8px" }}>
+          📄 Documentos
+        </li>
+
+        <li style={{ marginBottom: "8px" }}>
+          ➕ Novo Documento
+        </li>
+      </ul>
+    </aside>
   );
 }
